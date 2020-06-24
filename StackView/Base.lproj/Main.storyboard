@@ -24,6 +24,9 @@
                                         <state key="normal" title="Add">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onAddClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hY1-kD-xNe"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8G-9o-rCQ">
                                         <rect key="frame" x="119.66666666666666" y="0.0" width="103.66666666666666" height="30"/>
@@ -41,15 +44,27 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jjH-iZ-l0x">
+                                <rect key="frame" x="16" y="60" width="343" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="vM4-mN-lpt"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jjH-iZ-l0x" secondAttribute="trailing" constant="16" id="59e-pT-jLE"/>
+                            <constraint firstItem="jjH-iZ-l0x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Dnx-to-e2d"/>
                             <constraint firstItem="ND9-O7-MLD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="LwQ-Zf-cZC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ND9-O7-MLD" secondAttribute="bottom" constant="16" id="XSe-HX-4vK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ND9-O7-MLD" secondAttribute="trailing" constant="16" id="dAO-Hn-HTO"/>
+                            <constraint firstItem="jjH-iZ-l0x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="ngQ-TQ-LEh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="stackView" destination="jjH-iZ-l0x" id="0iK-8S-85E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
