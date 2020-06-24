@@ -50,5 +50,10 @@ class ViewController: UIViewController {
         let view = stackView.arrangedSubviews[stackView.arrangedSubviews.count - 1]
         view.removeFromSuperview()
     }
+    
+    @IBAction func onOrientationClicked(_ sender: Any) {
+        stackView.axis = (stackView.axis == .horizontal) ? .vertical : .horizontal
+    }
+    
 }
 
