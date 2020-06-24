@@ -42,5 +42,13 @@ class ViewController: UIViewController {
         stackView.addArrangedSubview(button)
     }
     
+    @IBAction func onRemoveClicked(_ sender: Any) {
+        if stackView.arrangedSubviews.count == 0 {
+            return
+        }
+        
+        let view = stackView.arrangedSubviews[stackView.arrangedSubviews.count - 1]
+        view.removeFromSuperview()
+    }
 }
 
