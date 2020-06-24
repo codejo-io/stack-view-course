@@ -29,6 +29,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var spacingSlider: UISlider!
+    @IBOutlet weak var spacingLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +59,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onSpacingChanged(_ sender: UISlider) {
-        stackView.spacing = CGFloat(sender.value)
+        let newSpacing = CGFloat(sender.value)
+        
+        spacingLabel.text = String.init(format: "%.0f", newSpacing)
+        stackView.spacing = newSpacing
     }
     
 }

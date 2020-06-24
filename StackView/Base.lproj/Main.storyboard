@@ -15,6 +15,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jjH-iZ-l0x">
+                                <rect key="frame" x="16" y="60" width="343" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="vM4-mN-lpt"/>
+                                </constraints>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ND9-O7-MLD">
                                 <rect key="frame" x="16" y="732" width="343" height="30"/>
                                 <subviews>
@@ -50,18 +56,29 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jjH-iZ-l0x">
-                                <rect key="frame" x="16" y="60" width="343" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="vM4-mN-lpt"/>
-                                </constraints>
-                            </stackView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="0.0" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="VXx-nt-QCg">
                                 <rect key="frame" x="14" y="686" width="347" height="31"/>
                                 <connections>
                                     <action selector="onSpacingChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="G8q-fA-jxE"/>
                                 </connections>
                             </slider>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="2Gl-z3-H0M">
+                                <rect key="frame" x="16" y="649.66666666666663" width="343" height="20.333333333333371"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spacing:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCV-pm-fj7">
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFB-t9-tyI">
+                                        <rect key="frame" x="173" y="0.0" width="170" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -69,8 +86,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jjH-iZ-l0x" secondAttribute="trailing" constant="16" id="59e-pT-jLE"/>
                             <constraint firstItem="jjH-iZ-l0x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Dnx-to-e2d"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VXx-nt-QCg" secondAttribute="trailing" constant="16" id="GnM-y0-fK1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Gl-z3-H0M" secondAttribute="trailing" constant="16" id="K7i-wh-cXJ"/>
                             <constraint firstItem="ND9-O7-MLD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="LwQ-Zf-cZC"/>
+                            <constraint firstItem="2Gl-z3-H0M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Vak-dE-hbX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ND9-O7-MLD" secondAttribute="bottom" constant="16" id="XSe-HX-4vK"/>
+                            <constraint firstItem="VXx-nt-QCg" firstAttribute="top" secondItem="2Gl-z3-H0M" secondAttribute="bottom" constant="16" id="aBx-Vy-vg7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ND9-O7-MLD" secondAttribute="trailing" constant="16" id="dAO-Hn-HTO"/>
                             <constraint firstItem="ND9-O7-MLD" firstAttribute="top" secondItem="VXx-nt-QCg" secondAttribute="bottom" constant="16" id="iE6-2y-zGY"/>
                             <constraint firstItem="jjH-iZ-l0x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="ngQ-TQ-LEh"/>
@@ -78,6 +98,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="spacingLabel" destination="tFB-t9-tyI" id="jnu-R0-FHz"/>
                         <outlet property="spacingSlider" destination="VXx-nt-QCg" id="JNe-ZL-dhw"/>
                         <outlet property="stackView" destination="jjH-iZ-l0x" id="0iK-8S-85E"/>
                     </connections>
