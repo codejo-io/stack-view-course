@@ -2,6 +2,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/osx,xcode,swift,visualstudiocode,macos
 # Edit at https://www.toptal.com/developers/gitignore?templates=osx,xcode,swift,visualstudiocode,macos
 
+
+passwords.txt
+
 ### macOS ###
 # General
 .DS_Store
