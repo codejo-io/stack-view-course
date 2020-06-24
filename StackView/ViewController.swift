@@ -28,10 +28,11 @@ class ViewController: UIViewController {
     ]
     
     @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var spacingSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        onSpacingChanged(spacingSlider)
     }
 
     @IBAction func onAddClicked(_ sender: UIButton) {
@@ -53,6 +54,10 @@ class ViewController: UIViewController {
     
     @IBAction func onOrientationClicked(_ sender: Any) {
         stackView.axis = (stackView.axis == .horizontal) ? .vertical : .horizontal
+    }
+    
+    @IBAction func onSpacingChanged(_ sender: UISlider) {
+        stackView.spacing = CGFloat(sender.value)
     }
     
 }

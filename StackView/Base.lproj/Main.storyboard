@@ -50,25 +50,35 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jjH-iZ-l0x">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jjH-iZ-l0x">
                                 <rect key="frame" x="16" y="60" width="343" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="vM4-mN-lpt"/>
                                 </constraints>
                             </stackView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="0.0" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="VXx-nt-QCg">
+                                <rect key="frame" x="14" y="686" width="347" height="31"/>
+                                <connections>
+                                    <action selector="onSpacingChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="G8q-fA-jxE"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="VXx-nt-QCg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="1tJ-Fc-HhO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jjH-iZ-l0x" secondAttribute="trailing" constant="16" id="59e-pT-jLE"/>
                             <constraint firstItem="jjH-iZ-l0x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Dnx-to-e2d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VXx-nt-QCg" secondAttribute="trailing" constant="16" id="GnM-y0-fK1"/>
                             <constraint firstItem="ND9-O7-MLD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="LwQ-Zf-cZC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ND9-O7-MLD" secondAttribute="bottom" constant="16" id="XSe-HX-4vK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ND9-O7-MLD" secondAttribute="trailing" constant="16" id="dAO-Hn-HTO"/>
+                            <constraint firstItem="ND9-O7-MLD" firstAttribute="top" secondItem="VXx-nt-QCg" secondAttribute="bottom" constant="16" id="iE6-2y-zGY"/>
                             <constraint firstItem="jjH-iZ-l0x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="ngQ-TQ-LEh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="spacingSlider" destination="VXx-nt-QCg" id="JNe-ZL-dhw"/>
                         <outlet property="stackView" destination="jjH-iZ-l0x" id="0iK-8S-85E"/>
                     </connections>
                 </viewController>
