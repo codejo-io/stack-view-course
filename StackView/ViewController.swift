@@ -10,6 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    static let colors = [
+        UIColor.black,
+        UIColor.blue,
+        UIColor.purple,
+        UIColor.green,
+        UIColor.red,
+        UIColor.darkGray
+    ]
+    
+    static let text = [
+        "Something",
+        "Text",
+        "Matt",
+        "Awesome",
+        "What???"
+    ]
+    
     @IBOutlet weak var stackView: UIStackView!
     
     override func viewDidLoad() {
@@ -19,8 +36,8 @@ class ViewController: UIViewController {
 
     @IBAction func onAddClicked(_ sender: UIButton) {
         let button = UIButton(frame: sender.frame)
-        button.backgroundColor = UIColor.purple
-        button.setTitle("Text", for: .normal)
+        button.backgroundColor = ViewController.colors.randomElement()
+        button.setTitle(ViewController.text.randomElement(), for: .normal)
         
         stackView.addArrangedSubview(button)
     }
